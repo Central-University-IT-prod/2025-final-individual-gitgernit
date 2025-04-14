@@ -1,0 +1,11 @@
+cost_per_impression: 2.25
+cost_per_click: 1
+ad_title: растпобеда
+ad_text: говорит за себя
+targeting:
+  age_from: 10
+  age_to: 20
+impressions_limit: 100
+clicks_limit: 1
+start_date: 0
+end_date: 0

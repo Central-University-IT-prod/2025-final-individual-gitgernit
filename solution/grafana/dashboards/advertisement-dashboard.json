@@ -1,0 +1,73 @@
+{
+  "id": null,
+  "uid": "advertisement-metrics",
+  "title": "Advertisement Metrics",
+  "schemaVersion": 16,
+  "version": 1,
+  "panels": [
+    {
+      "title": "Clients Created Over Time",
+      "type": "timeseries",
+      "targets": [
+        {
+          "rawSql": "SELECT DATE_TRUNC('minute', created_at) AS time, COUNT(*) AS total_clients FROM clients GROUP BY time ORDER BY time;",
+          "format": "time_series",
+          "datasource": "PostgreSQL"
+        }
+      ],
+      "options": {
+        "lineWidth": 2,
+        "fillOpacity": 30,
+        "showPoints": "auto"
+      }
+    },
+    {
+      "title": "Advertisers Created Over Time",
+      "type": "timeseries",
+      "targets": [
+        {
+          "rawSql": "SELECT DATE_TRUNC('minute', created_at) AS time, COUNT(*) AS total_advertisers FROM advertisers GROUP BY time ORDER BY time;",
+          "format": "time_series",
+          "datasource": "PostgreSQL"
+        }
+      ],
+      "options": {
+        "lineWidth": 2,
+        "fillOpacity": 30,
+        "showPoints": "auto"
+      }
+    },
+    {
+      "title": "Clicks Over Time",
+      "type": "timeseries",
+      "targets": [
+        {
+          "rawSql": "SELECT DATE_TRUNC('minute', created_at) AS time, COUNT(*) AS total_clicks FROM clicks GROUP BY time ORDER BY time;",
+          "format": "time_series",
+          "datasource": "PostgreSQL"
+        }
+      ],
+      "options": {
+        "lineWidth": 2,
+        "fillOpacity": 30,
+        "showPoints": "auto"
+      }
+    },
+    {
+      "title": "Impressions Over Time",
+      "type": "timeseries",
+      "targets": [
+        {
+          "rawSql": "SELECT DATE_TRUNC('minute', created_at) AS time, COUNT(*) AS total_impressions FROM impressions GROUP BY time ORDER BY time;",
+          "format": "time_series",
+          "datasource": "PostgreSQL"
+        }
+      ],
+      "options": {
+        "lineWidth": 2,
+        "fillOpacity": 30,
+        "showPoints": "auto"
+      }
+    }
+  ]
+}

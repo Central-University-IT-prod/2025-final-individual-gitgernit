@@ -1,0 +1,15 @@
+test_name: Upsert Создание рекламодателей
+
+stages:
+  - name: 'Upsert Создание рекламодателей'
+    request:
+      url: '{BASE_URL}/advertisers/bulk'
+      method: POST
+      json:
+        - !include components/advertisers/advertiser1.yml
+        - !include components/advertisers/advertiser2.yml
+    response:
+      status_code: 201
+      json:
+        - !include components/advertisers/advertiser1.yml
+        - !include components/advertisers/advertiser2.yml

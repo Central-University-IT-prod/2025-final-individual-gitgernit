@@ -1,0 +1,13 @@
+test_name: Обновление ml скора клиентов и рекламодателей
+
+stages:
+  - name: 'Обновление ml скора у клиента №1 и рекламодателя №1'
+    request:
+      url: '{BASE_URL}/ml-scores'
+      method: POST
+      json:
+        client_id: 9a2470ca-7f29-4c1c-80c1-c4808ba30267
+        advertiser_id: a1672904-07e7-419b-ab09-a0abdcec2086
+        score: 100
+    response:
+      status_code: 200

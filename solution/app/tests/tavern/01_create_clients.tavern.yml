@@ -1,0 +1,15 @@
+test_name: Upsert Создание клиентов
+
+stages:
+  - name: 'Upsert Создание клиентов'
+    request:
+      url: '{BASE_URL}/clients/bulk'
+      method: POST
+      json:
+        - !include components/clients/client1.yml
+        - !include components/clients/client2.yml
+    response:
+      status_code: 201
+      json:
+        - !include components/clients/client1.yml
+        - !include components/clients/client2.yml
